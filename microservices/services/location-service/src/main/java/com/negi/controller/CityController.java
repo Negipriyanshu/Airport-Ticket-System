@@ -72,7 +72,7 @@ public class CityController {
         return ResponseEntity.ok(cityService.searchCities(keyword,pageable));
     }
 
-    @GetMapping("/country/{countryCode")
+    @GetMapping("/country/{countryCode}")
     public ResponseEntity<Page<CityResponse>> getCitiesByCountryCode(
             @PathVariable String countryCode,
             @RequestParam(defaultValue = "0") int page,
