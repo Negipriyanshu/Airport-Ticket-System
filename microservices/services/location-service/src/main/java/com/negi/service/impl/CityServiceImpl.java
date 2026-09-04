@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class CityServiceImpl implements CityService {
 
     @Autowired
-    private CityRespository cityRespository;
+    private final CityRespository cityRespository;
 
     @Override
     public CityResponse createCity(CityRequest request) throws Exception{
@@ -44,7 +44,7 @@ public class CityServiceImpl implements CityService {
         City city =cityRespository.findById(id).orElseThrow(
                 ()-> new Exception("Resource not found exception")
         );
-        if(cityRespository.existByCityCode(request.getCityCode())){
+if (cityRespository.existsByCityCodeAndIdNot(request.getCityCode(), id)) {
             throw new Exception("City with givven code already exist");
         }
         City updateCity = cityRespository.save(CityMapper.updateEntity(city,request));
@@ -77,7 +77,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public Boolean cityExists(String cityCode) {
-        return cityRespository.existByCityCode(cityCode);
+        return cityRespository.existsByCityCode(cityCode);
     }
 
 
