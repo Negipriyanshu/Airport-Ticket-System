@@ -15,10 +15,10 @@
     <packaging>pom</packaging>
 
     <name>Business Services</name>
-	<description>Aggregator for Business Services </description>
+	<description>Aggregator for Business MicroServices(user, flight,booking, etc. </description>
 	
     <modules>
-        <!-- <module>user-services</module> -->
+         <module>user-service</module>
         <module>location-service</module>
     </modules>
 
