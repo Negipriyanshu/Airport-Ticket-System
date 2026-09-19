@@ -15,11 +15,13 @@
     <packaging>pom</packaging>
 
     <name>Business Services</name>
-	<description>Aggregator for Business MicroServices(user, flight,booking, etc. </description>
+	<description>Aggregator for Business MicroServices user, flight,booking, etc. </description>
 	
     <modules>
          <module>user-service</module>
         <module>location-service</module>
+        <module>airline-core-service</module>
+        <module>flight-ops-service</module>
     </modules>
 
 </project>
