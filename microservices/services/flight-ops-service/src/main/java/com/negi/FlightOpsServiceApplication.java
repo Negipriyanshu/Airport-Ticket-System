@@ -2,9 +2,11 @@ package com.negi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-public class FlightOpsServiceApplication {
+@EnableJpaAuditing
+ public class FlightOpsServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FlightOpsServiceApplication.class, args);

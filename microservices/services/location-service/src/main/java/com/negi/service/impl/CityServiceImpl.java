@@ -45,7 +45,7 @@ public class CityServiceImpl implements CityService {
                 ()-> new Exception("Resource not found exception")
         );
 if (cityRespository.existsByCityCodeAndIdNot(request.getCityCode(), id)) {
-            throw new Exception("City with givven code already exist");
+            throw new Exception("City with given code already exist");
         }
         City updateCity = cityRespository.save(CityMapper.updateEntity(city,request));
         return CityMapper.toCityResponse(updateCity);
